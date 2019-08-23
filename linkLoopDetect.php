@@ -81,5 +81,5 @@ class linkLoopDetect
 }
 
 if(class_exists("linkLoopDetect")){
-  $SitemapAndryWJ = new linkLoopDetect();
+  $linkLoopDetect = new linkLoopDetect();
 }
