@@ -52,7 +52,7 @@ class linkLoopDetect
 
   private function replace_callback_func($matches){
     $link_out = $this->loopLinks($matches[1]);
-    return 'href="'.$link_out.'" data-sdfsdf="005"';
+    return 'href="'.$link_out.'"';
   }
 
   private function loopLinks($in){
