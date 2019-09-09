@@ -46,8 +46,7 @@ class linkLoopDetect
     {
 
       $out = preg_replace_callback('/href="(.*)"/U', array($this,"replace_callback_func"), $buffer);
-      return print_r($out,true);
-
+      return $out;
     }
 
   private function replace_callback_func($matches){
