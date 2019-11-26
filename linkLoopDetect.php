@@ -44,14 +44,13 @@ class linkLoopDetect
 
   private function callback_boofer($buffer)
     {
-
-      $out = preg_replace_callback('/href="(.*)"/U', array($this,"replace_callback_func"), $buffer);
+      $out = preg_replace_callback('/(<a.*href=")(.*)"/U', array($this,"replace_callback_func"), $buffer);
       return $out;
     }
 
   private function replace_callback_func($matches){
-    $link_out = $this->loopLinks($matches[1]);
-    return 'href="'.$link_out.'"';
+    $link_out = $this->loopLinks($matches[2]);
+    return $matches[1].$link_out.'"';
   }
 
   private function loopLinks($in){
